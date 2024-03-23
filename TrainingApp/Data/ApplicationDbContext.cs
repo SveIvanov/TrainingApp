@@ -3,11 +3,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace TrainingApp.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class TrainingDbContext : IdentityDbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        public TrainingDbContext(DbContextOptions<TrainingDbContext> options)
             : base(options)
         {
+
         }
     }
 }

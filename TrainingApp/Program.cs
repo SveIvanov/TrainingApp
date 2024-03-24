@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using TrainingApp.Data;
+
+using TrainingApp.Infrastructure.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 

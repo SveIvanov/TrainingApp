@@ -34,15 +34,15 @@ namespace TrainingApp.Infrastructure.Data
 
         }
 
-        public DbSet<CardioTraining> CardioTrainings { get; set; }
+        public DbSet<CardioTraining> CardioTrainings { get; set; } = null!;
 
-        public DbSet<CardioTrainingParticipant> CardioTrainingsParticipants { get; set; }
-        public DbSet<Crossfit> Crossfits { get; set; }
-        public DbSet<CrossfitParticipant> CrossfitsParticipants { get; set; }
-        public DbSet<Hiit> Hiits { get; set; }
-        public DbSet<HiitParticipant> HiitsParticipants { get; set; }
-        public DbSet<StrenghtTraining> StrenghtTrainings { get; set; }
-        public DbSet<StrenghtTrainingParticipant> StrenghtTrainingsParticipants { get; set; }
-        public DbSet<Trainer> Trainers { get; set; }
+        public DbSet<CardioTrainingParticipant> CardioTrainingsParticipants { get; set; } = null!;
+        public DbSet<Crossfit> Crossfits { get; set; } = null!; 
+        public DbSet<CrossfitParticipant> CrossfitsParticipants { get; set; } = null!;  
+        public DbSet<Hiit> Hiits { get; set; } = null!; 
+        public DbSet<HiitParticipant> HiitsParticipants { get; set; } = null!;  
+        public DbSet<StrenghtTraining> StrenghtTrainings { get; set; } = null!; 
+        public DbSet<StrenghtTrainingParticipant> StrenghtTrainingsParticipants { get; set; } = null!;  
+        public DbSet<Trainer> Trainers { get; set; } = null!;   
     }
 }

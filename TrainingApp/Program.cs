@@ -11,7 +11,13 @@ builder.Services.AddDbContext<TrainingDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddDefaultIdentity<IdentityUser>(options =>
+{
+    options.SignIn.RequireConfirmedAccount = false;
+    options.Password.RequireUppercase = false;
+    options.Password.RequireDigit = false;
+    options.Password.RequiredUniqueChars = 0;
+    })
     .AddEntityFrameworkStores<TrainingDbContext>();
 builder.Services.AddControllersWithViews();
 

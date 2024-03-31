@@ -5,24 +5,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TrainingApp.Infrastructure.Data.Models;
+using Type = TrainingApp.Infrastructure.Data.Models;
 
 namespace TrainingApp.Infrastructure.Data.SeedDB
 {
     internal class SeedData
     {
-        public IdentityUser GuestUser { get; set; }
+        public IdentityUser GuestUser { get; set; } = null!; 
 
-        public IdentityUser TrainerUser { get; set; }
+        public IdentityUser TrainerUser { get; set; } = null!;
 
-        public Trainer Trainer { get; set; }
+        public Trainer Trainer { get; set; } = null!;
 
-        public Hiit Hiit { get; set; }
+        public Hiit Hiit { get; set; } = null!; 
 
-        public Crossfit Crossfit { get; set; }
+        public Crossfit Crossfit { get; set; } = null!; 
 
-        public StrenghtTraining StrenghtTraining { get; set; }
+        public StrenghtTraining StrenghtTraining { get; set; } = null!; 
 
-        public CardioTraining CardioTraining { get; set; }
+        public CardioTraining CardioTraining { get; set; } = null!;
+
+        public SeedData()
+        {
+            SeedUsers();
+            SeedTrainer();
+            SeedTrainings();
+        }
         private void SeedUsers() 
         { 
             var hasher = new PasswordHasher<IdentityUser>(); 
@@ -56,6 +64,41 @@ namespace TrainingApp.Infrastructure.Data.SeedDB
                 TrainerId = Trainer.Id
                 
             };
+
+            Hiit = new Hiit()
+            {
+                Id = 1,
+                Type = "Running",
+                DurationInMinutes = 30,
+                Intervals = 10,
+                Date = new DateTime(2024, 05, 06, 12, 00, 00),
+                TrainerId = Trainer.Id
+
+            };
+
+            CardioTraining = new CardioTraining()
+            {
+                Id = 1,
+                Type = "Running",
+                DurationInMinutes = 60,
+                DistanceInMeters = 5000,
+                Date = new DateTime(2024, 05, 07, 12, 00, 00),
+                TrainerId = Trainer.Id
+
+            };
+
+            StrenghtTraining = new StrenghtTraining()
+            {
+                Id = 1,
+                BodyPart = "Chest",
+                DurationInMinutes = 60,
+                Sets = 21,
+                Date = new DateTime(2024, 05, 08, 12, 00, 00),
+                TrainerId = Trainer.Id
+
+            };
+
+
         }
     }
 }

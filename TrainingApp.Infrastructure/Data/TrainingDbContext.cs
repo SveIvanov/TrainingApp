@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Reflection.Emit;
 using TrainingApp.Infrastructure.Data.Models;
+using TrainingApp.Infrastructure.Data.SeedDB;
 
 namespace TrainingApp.Infrastructure.Data
 {
@@ -15,6 +16,15 @@ namespace TrainingApp.Infrastructure.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+
+            builder.ApplyConfiguration(new UserConfiguration());
+            builder.ApplyConfiguration(new TrainerConfiguration());
+            builder.ApplyConfiguration(new HiitConfiguration());
+            builder.ApplyConfiguration(new CrossfitConfiguration());
+            builder.ApplyConfiguration(new CardioTrainingConfiguration());
+            builder.ApplyConfiguration(new StrenghtTrainingConfiguration());
+
+
             base.OnModelCreating(builder);
 
             builder.Entity<CardioTrainingParticipant>()

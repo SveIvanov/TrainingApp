@@ -22,6 +22,24 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
+                        @if (this.User?.Identity?.IsAuthenticated ?? false)
+                        {
+                            <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="CardioTraining" asp-action="Index">Cardio Training</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Crossfit" asp-action="Index">Crossfit</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Hiit" asp-action="Index">Hiit</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="StrenghtTraining" asp-action="Index">Strenght Training</a>
+                            </li>
+                             <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Trainer" asp-action="Index">Become a trainer</a>
+                            </li>
+                        }
                        
                     </ul>
                     <partial name="_LoginPartial" />

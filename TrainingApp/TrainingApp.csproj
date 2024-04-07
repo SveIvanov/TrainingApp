@@ -23,4 +23,11 @@
     <ProjectReference Include="..\TrainingApp.Core\TrainingApp.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Crossfit\" />
+    <Folder Include="Views\CardioTraining\" />
+    <Folder Include="Views\Trainer\" />
+    <Folder Include="Views\StrenghtTraining\" />
+  </ItemGroup>
+
 </Project>

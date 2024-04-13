@@ -7,7 +7,7 @@ namespace TrainingApp.Controllers
     [Authorize]
     public class HiitController : Controller
     {
-        public IActionResult All()
+        public async Task<IActionResult> All()
         {
             var model = new AllHiitModel();
             return View(model);

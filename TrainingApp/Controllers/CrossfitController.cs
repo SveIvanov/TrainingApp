@@ -8,7 +8,7 @@ namespace TrainingApp.Controllers
     [Authorize]
     public class CrossfitController : Controller
     {
-        public IActionResult All()
+        public async Task<IActionResult> All()
         {
             var model = new AllCrossfitModel();
             return View(model);

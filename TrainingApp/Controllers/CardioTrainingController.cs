@@ -8,7 +8,7 @@ namespace TrainingApp.Controllers
     [Authorize]
     public class CardioTrainingController : Controller
     {
-        public IActionResult All()
+        public async Task<IActionResult> All()
         {
             var model = new AllCardioTrainingModel();
             return View(model);

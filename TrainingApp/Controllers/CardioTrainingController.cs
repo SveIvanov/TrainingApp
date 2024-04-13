@@ -1,14 +1,17 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using TrainingApp.Core.Models.CardioTraining;
+using TrainingApp.Core.Models.Hiit;
 
 namespace TrainingApp.Controllers
 {
     [Authorize]
     public class CardioTrainingController : Controller
     {
-        public IActionResult Index()
+        public IActionResult All()
         {
-            return View();
+            var model = new AllCardioTrainingModel();
+            return View(model);
         }
     }
 }

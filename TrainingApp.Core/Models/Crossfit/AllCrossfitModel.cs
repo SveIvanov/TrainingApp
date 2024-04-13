@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TrainingApp.Core.Models.CardioTraining
+namespace TrainingApp.Core.Models.Crossfit
 {
-	public class AllCardioTraining
+	public class AllCrossfitModel
 	{
 	}
 }

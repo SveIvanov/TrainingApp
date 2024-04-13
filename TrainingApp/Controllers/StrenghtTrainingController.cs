@@ -1,14 +1,17 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using TrainingApp.Core.Models.CardioTraining;
+using TrainingApp.Core.Models.StrenghtTraining;
 
 namespace TrainingApp.Controllers
 {
     [Authorize]
     public class StrenghtTrainingController : Controller
     {
-        public IActionResult Index()
+        public IActionResult All()
         {
-            return View();
+            var model = new AllStrenghtTrainingModel();
+            return View(model);
         }
     }
 }

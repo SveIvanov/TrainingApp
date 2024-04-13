@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrainingApp.Core.Models.StrenghtTraining
 {
-	public class AllStrenghtTraining
+	public class AllStrenghtTrainingModel
 	{
 	}
 }

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-
+using TrainingApp.Core.Contracts;
+using TrainingApp.Core.Services;
 using TrainingApp.Infrastructure.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +11,8 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<TrainingDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
+builder.Services.AddScoped<IHiitServices, HiitServices>();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options =>
 {

@@ -1,7 +1,43 @@
-﻿@model AllHiitModel
+﻿@model IEnumerable<AllHiitModel>
 
 @{
 	ViewData["Title"] = "HIIT";
 }
 
 <h2 class="text-cener">@ViewData["Title"]</h2>
+
+<div class="text-center row">
+    @if (Model != null && Model.Any())
+    {
+        @foreach (var e in Model)
+        {
+                <div class="card col-4" style="width: 20rem; ">
+                    <div class="card-body">
+                        <h5 class="card-title mt-1">HIIT Training</h5>
+                        <p class="mb-0"><span class="fw-bold">Type: </span>@e.Type</p>
+                        <p class="mb-0"><span class="fw-bold">Duration: </span>@e.Duration min</p>
+                        <p class="mb-0"><span class="fw-bold">Intervals: </span>@e.Intervals</p>
+                        <p class="mb-0"><span class="fw-bold">Starting time: </span>@e.Date</p>
+                        <p class="mb-0"><span class="fw-bold">Trainer: </span>@e.Trainer</p>
+                    </div>
+
+                    
+                @if (User.Identity.Name == e.TrainerEmail)
+                {
+                    <a asp-controller="Hiit" asp-action="Edit" asp-route-id="@e.Id" class="btn btn-warning mb-2 w-100 p-3 fw-bold">Edit</a>
+                    <a asp-controller="Hiit" asp-action="Delete" asp-route-id="@e.Id" class="btn btn-warning mb-2 w-100 p-3 fw-bold">Delete</a>
+                }
+                else
+                {
+                    <form class="input-group-sm " asp-controller="Hiit" asp-action="Join" asp-route-id="@e.Id">
+                        <input type="submit" value="Join the Training" class="fs-6 btn btn-warning mb-3 w-100 p-3 fw-bold" />
+                    </form>
+                }
+                </div>
+        }
+    }
+    else
+    {
+            <h3 class="text-center">There are no HIITs yet!</h3>
+    }
+</div>

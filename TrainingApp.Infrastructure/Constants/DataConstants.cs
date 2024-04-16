@@ -18,6 +18,8 @@ namespace TrainingApp.Infrastructure.Constants
 
         public const int TrainerNameMaxLenght = 100;
 
+        public const int TrainerNameMinLenght = 5;
+
 
 
     }

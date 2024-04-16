@@ -22,7 +22,7 @@
                     </div>
 
                     
-                @if (User.Identity.Name == e.TrainerEmail)
+                @if (User.Identity?.Name == e.TrainerEmail)
                 {
                     <a asp-controller="Hiit" asp-action="Edit" asp-route-id="@e.Id" class="btn btn-warning mb-2 w-100 p-3 fw-bold">Edit</a>
                     <a asp-controller="Hiit" asp-action="Delete" asp-route-id="@e.Id" class="btn btn-warning mb-2 w-100 p-3 fw-bold">Delete</a>

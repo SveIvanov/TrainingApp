@@ -13,6 +13,9 @@ builder.Services.AddDbContext<TrainingDbContext>(options =>
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddScoped<IHiitServices, HiitServices>();
+builder.Services.AddScoped<ICrossfitServices, CrossfitServices>();
+builder.Services.AddScoped<IStrenghtTrainingServices, StrenghtTrainingServices>();
+builder.Services.AddScoped<ICardioTrainingServices, CardioTrainingServices>();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options =>
 {

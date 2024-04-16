@@ -1,7 +1,43 @@
-﻿@model AllStrenghtTrainingModel
+﻿@model IEnumerable<AllStrenghtTrainingModel>
 
 @{
-	ViewData["Title"] = "StrenghtTraining";
+	ViewData["Title"] = "Strenght trainings";
 }
 
 <h2 class="text-cener">@ViewData["Title"]</h2>
+
+<div class="text-center row">
+    @if (Model != null && Model.Any())
+    {
+        @foreach (var e in Model)
+        {
+                <div class="card col-4" style="width: 20rem; ">
+                    <div class="card-body">
+                        <h5 class="card-title mt-1">Strenght Training</h5>
+                        <p class="mb-0"><span class="fw-bold">Body part: </span>@e.BodyPart</p>
+                        <p class="mb-0"><span class="fw-bold">Duration: </span>@e.Duration min</p>
+                        <p class="mb-0"><span class="fw-bold">Sets: </span>@e.Sets</p>
+                        <p class="mb-0"><span class="fw-bold">Starting time: </span>@e.Date</p>
+                        <p class="mb-0"><span class="fw-bold">Trainer: </span>@e.Trainer</p>
+                    </div>
+
+                    
+                @if (User.Identity?.Name == e.TrainerEmail)
+                {
+                    <a asp-controller="StrenghTraining" asp-action="Edit" asp-route-id="@e.Id" class="btn btn-warning mb-2 w-100 p-3 fw-bold">Edit</a>
+                    <a asp-controller="StrenghTraining" asp-action="Delete" asp-route-id="@e.Id" class="btn btn-warning mb-2 w-100 p-3 fw-bold">Delete</a>
+                }
+                else
+                {
+                    <form class="input-group-sm " asp-controller="StrenghTraining" asp-action="Join" asp-route-id="@e.Id">
+                        <input type="submit" value="Join the Training" class="fs-6 btn btn-warning mb-3 w-100 p-3 fw-bold" />
+                    </form>
+                }
+                </div>
+        }
+    }
+    else
+    {
+            <h3 class="text-center">There are no Strenght trainings yet!</h3>
+    }
+</div>

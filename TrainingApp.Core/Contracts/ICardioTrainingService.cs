@@ -10,6 +10,6 @@ namespace TrainingApp.Core.Contracts
 {
     public interface ICardioTrainingService
     {
-        Task<IEnumerable<AllCardioTrainingModel>> TakeAll();
+        Task<IEnumerable<AllCardioTrainingModel>> TakeAllAsync();
     }
 }

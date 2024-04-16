@@ -8,6 +8,8 @@ namespace TrainingApp.Core.Contracts
 {
     public interface ITrainerService
     {
+        Task<bool> ExistByIDAsync(string UserId);
 
+        Task CreateAsync(string userId, string name);
     }
 }

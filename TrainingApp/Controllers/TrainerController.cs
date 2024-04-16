@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using TrainingApp.Core.Contracts;
 using TrainingApp.Core.Models.Trainer;
+using TrainingApp.Extensions;
 
 namespace TrainingApp.Controllers
 {
@@ -18,6 +19,11 @@ namespace TrainingApp.Controllers
         [HttpGet]
         public async Task<IActionResult> Become()
         {
+            if (await _trainerService.ExistByIDAsync(User.Id()))
+            {
+                return BadRequest();
+            }
+            
             var model = new BecomeTrainerFormModel();
             
             return View(model);

@@ -9,6 +9,6 @@ namespace TrainingApp.Core.Contracts
 {
     public interface ICrossfitService
     {
-        Task<IEnumerable<AllCrossfitModel>> TakeAll();
+        Task<IEnumerable<AllCrossfitModel>> TakeAllAsync();
     }
 }

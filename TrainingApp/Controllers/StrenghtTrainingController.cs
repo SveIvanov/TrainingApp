@@ -16,7 +16,7 @@ namespace TrainingApp.Controllers
         
         public async Task<IActionResult> All()
         {
-            var model = await _strenghtTrainingService.TakeAll();
+            var model = await _strenghtTrainingService.TakeAllAsync();
             return View(model);
         }
     }

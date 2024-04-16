@@ -20,7 +20,7 @@ namespace TrainingApp.Core.Services
             context = _context;
         }
 
-        public async Task<IEnumerable<AllCrossfitModel>> TakeAll()
+        public async Task<IEnumerable<AllCrossfitModel>> TakeAllAsync()
         {
             return await context.Crossfits
                             .Select(c => new AllCrossfitModel

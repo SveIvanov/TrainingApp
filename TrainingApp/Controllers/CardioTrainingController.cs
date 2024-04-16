@@ -18,7 +18,7 @@ namespace TrainingApp.Controllers
 
         public async Task<IActionResult> All()
         {
-            var model = await _cardioTrainingService.TakeAll();
+            var model = await _cardioTrainingService.TakeAllAsync();
             return View(model);
         }
     }

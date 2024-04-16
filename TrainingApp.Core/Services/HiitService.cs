@@ -19,7 +19,7 @@ namespace TrainingApp.Core.Services
             context = _context;
         }
         
-        public async Task<IEnumerable<AllHiitModel>> TakeAll()
+        public async Task<IEnumerable<AllHiitModel>> TakeAllAsync()
         {
             return await context.Hiits
                    .Select(h => new AllHiitModel

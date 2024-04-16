@@ -9,6 +9,6 @@ namespace TrainingApp.Core.Contracts
 {
     public interface IHiitService
     {
-        Task<IEnumerable<AllHiitModel>> TakeAll();
+        Task<IEnumerable<AllHiitModel>> TakeAllAsync();
     }
 }

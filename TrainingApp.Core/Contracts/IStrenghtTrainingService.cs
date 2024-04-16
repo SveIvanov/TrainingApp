@@ -10,6 +10,6 @@ namespace TrainingApp.Core.Contracts
 {
     public interface IStrenghtTrainingService
     {
-        Task<IEnumerable<AllStrenghtTrainingModel>> TakeAll();
+        Task<IEnumerable<AllStrenghtTrainingModel>> TakeAllAsync();
     }
 }

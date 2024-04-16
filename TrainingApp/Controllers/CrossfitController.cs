@@ -17,7 +17,7 @@ namespace TrainingApp.Controllers
 
         public async Task<IActionResult> All()
         {
-            var model = await _crossfitService.TakeAll();
+            var model = await _crossfitService.TakeAllAsync();
             return View(model);
         }
     }

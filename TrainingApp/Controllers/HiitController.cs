@@ -16,7 +16,7 @@ namespace TrainingApp.Controllers
     
         public async Task<IActionResult> All()
         {
-            var model = await _hiitService.TakeAll();
+            var model = await _hiitService.TakeAllAsync();
             return View(model);
         }
     }

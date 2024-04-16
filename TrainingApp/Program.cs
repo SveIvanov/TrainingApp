@@ -12,10 +12,11 @@ builder.Services.AddDbContext<TrainingDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddScoped<IHiitServices, HiitServices>();
-builder.Services.AddScoped<ICrossfitServices, CrossfitServices>();
-builder.Services.AddScoped<IStrenghtTrainingServices, StrenghtTrainingServices>();
-builder.Services.AddScoped<ICardioTrainingServices, CardioTrainingServices>();
+builder.Services.AddScoped<IHiitService, HiitService>();
+builder.Services.AddScoped<ICrossfitService, CrossfitService>();
+builder.Services.AddScoped<IStrenghtTrainingService, StrenghtTrainingService>();
+builder.Services.AddScoped<ICardioTrainingService, CardioTrainingService>();
+builder.Services.AddScoped<ITrainerService, TrainerService>();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options =>
 {

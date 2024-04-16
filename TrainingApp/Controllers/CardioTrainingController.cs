@@ -6,19 +6,19 @@ using TrainingApp.Core.Models.Hiit;
 
 namespace TrainingApp.Controllers
 {
-    [Authorize]
-    public class CardioTrainingController : Controller
+    
+    public class CardioTrainingController : BaseController
     {
-        private readonly ICardioTrainingServices _cardioTrainingServices;
+        private readonly ICardioTrainingService _cardioTrainingService;
 
-        public CardioTrainingController(ICardioTrainingServices cardioTrainingServices)
+        public CardioTrainingController(ICardioTrainingService cardioTrainingService)
         {
-            _cardioTrainingServices = cardioTrainingServices;   
+            _cardioTrainingService = cardioTrainingService;   
         }
 
         public async Task<IActionResult> All()
         {
-            var model = await _cardioTrainingServices.TakeAll();
+            var model = await _cardioTrainingService.TakeAll();
             return View(model);
         }
     }

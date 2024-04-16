@@ -10,11 +10,11 @@ using TrainingApp.Infrastructure.Data;
 
 namespace TrainingApp.Core.Services
 {
-    public class HiitServices : IHiitServices
+    public class HiitService : IHiitService
     {
         private readonly TrainingDbContext context;
 
-        public HiitServices(TrainingDbContext _context)
+        public HiitService(TrainingDbContext _context)
         {
             context = _context;
         }

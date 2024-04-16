@@ -12,11 +12,11 @@ using TrainingApp.Infrastructure.Data;
 
 namespace TrainingApp.Core.Services
 {
-    public class StrenghtTrainingServices : IStrenghtTrainingServices
+    public class StrenghtTrainingService : IStrenghtTrainingService
     {
         private readonly TrainingDbContext context;
 
-        public StrenghtTrainingServices(TrainingDbContext _context)
+        public StrenghtTrainingService(TrainingDbContext _context)
         {
             context = _context;
         }

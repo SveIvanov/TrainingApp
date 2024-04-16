@@ -4,19 +4,19 @@ using TrainingApp.Core.Contracts;
 
 namespace TrainingApp.Controllers
 {
-    [Authorize]
-    public class StrenghtTrainingController : Controller
+    
+    public class StrenghtTrainingController : BaseController
     {
-        private readonly IStrenghtTrainingServices _strenghtTrainingServices;
+        private readonly IStrenghtTrainingService _strenghtTrainingService;
 
-        public StrenghtTrainingController(IStrenghtTrainingServices strenghtTrainingServices)
+        public StrenghtTrainingController(IStrenghtTrainingService strenghtTrainingService)
         {
-            _strenghtTrainingServices = strenghtTrainingServices;
+            _strenghtTrainingService = strenghtTrainingService;
         }
         
         public async Task<IActionResult> All()
         {
-            var model = await _strenghtTrainingServices.TakeAll();
+            var model = await _strenghtTrainingService.TakeAll();
             return View(model);
         }
     }

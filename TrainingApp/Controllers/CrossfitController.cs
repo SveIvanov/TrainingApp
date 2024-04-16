@@ -6,18 +6,18 @@ using TrainingApp.Core.Models.Hiit;
 
 namespace TrainingApp.Controllers
 {
-    [Authorize]
-    public class CrossfitController : Controller
+    
+    public class CrossfitController : BaseController
     {
-        private readonly ICrossfitServices _crossfitServices;
-        public CrossfitController(ICrossfitServices crossfitServices)
+        private readonly ICrossfitService _crossfitService;
+        public CrossfitController(ICrossfitService crossfitService)
         {
-            _crossfitServices = crossfitServices;
+            _crossfitService = crossfitService;
         }
 
         public async Task<IActionResult> All()
         {
-            var model = await _crossfitServices.TakeAll();
+            var model = await _crossfitService.TakeAll();
             return View(model);
         }
     }

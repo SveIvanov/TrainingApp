@@ -5,18 +5,18 @@ using TrainingApp.Core.Models.Hiit;
 
 namespace TrainingApp.Controllers
 {
-    [Authorize]
-    public class HiitController : Controller
+    
+    public class HiitController : BaseController
     {
-        private readonly IHiitServices _hiitServices;
-        public HiitController(IHiitServices hiitServices)
+        private readonly IHiitService _hiitService;
+        public HiitController(IHiitService hiitService)
         {
-            _hiitServices = hiitServices;
+            _hiitService = hiitService;
         }
     
         public async Task<IActionResult> All()
         {
-            var model = await _hiitServices.TakeAll();
+            var model = await _hiitService.TakeAll();
             return View(model);
         }
     }

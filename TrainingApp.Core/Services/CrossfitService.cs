@@ -5,30 +5,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TrainingApp.Core.Contracts;
-using TrainingApp.Core.Models.CardioTraining;
+using TrainingApp.Core.Models.Crossfit;
 using TrainingApp.Core.Models.Hiit;
 using TrainingApp.Infrastructure.Data;
 
 namespace TrainingApp.Core.Services
 {
-    public class CardioTrainingServices : ICardioTrainingServices
+    public class CrossfitService : ICrossfitService
     {
         private readonly TrainingDbContext context;
 
-        public CardioTrainingServices(TrainingDbContext _context)
+        public CrossfitService(TrainingDbContext _context)
         {
             context = _context;
         }
 
-        public async Task<IEnumerable<AllCardioTrainingModel>> TakeAll()
+        public async Task<IEnumerable<AllCrossfitModel>> TakeAll()
         {
-            return await context.CardioTrainings
-                            .Select(c => new AllCardioTrainingModel
+            return await context.Crossfits
+                            .Select(c => new AllCrossfitModel
                             {
                                 Id = c.Id,
-                                Type = c.Type,
                                 Duration = c.DurationInMinutes,
-                                Distance = c.DistanceInMeters,
                                 Trainer = c.Trainer.Name,
                                 Date = c.Date.ToString("yyyy/MM/dd HH:mm:ss"),
                                 TrainerEmail = c.Trainer.User.UserName

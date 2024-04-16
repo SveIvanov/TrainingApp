@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TrainingApp.Core.Models.Hiit;
-using TrainingApp.Core.Models.StrenghtTraining;
 
 namespace TrainingApp.Core.Contracts
 {
-    public interface IStrenghtTrainingServices
+    public interface IHiitService
     {
-        Task<IEnumerable<AllStrenghtTrainingModel>> TakeAll();
+        Task<IEnumerable<AllHiitModel>> TakeAll();
     }
 }

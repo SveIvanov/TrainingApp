@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TrainingApp.Core.Contracts;
 using TrainingApp.Infrastructure.Data;
+using TrainingApp.Infrastructure.Data.Models;
 
 namespace TrainingApp.Core.Services
 {
@@ -18,9 +19,15 @@ namespace TrainingApp.Core.Services
             context = _context;
         }
 
-        public Task CreateAsync(string userId, string name)
+        public async Task CreateAsync(string userId, string name)
         {
-            throw new NotImplementedException();
+            await context.Trainers.AddAsync(new Trainer()
+            {
+                UserId = userId,
+                Name = name
+            });
+
+            await context.SaveChangesAsync();
         }
 
         public async Task<bool> ExistByIDAsync(string userId)

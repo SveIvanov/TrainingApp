@@ -57,5 +57,6 @@ namespace TrainingApp.Controllers
 
             return RedirectToAction(nameof(All));
         }
+
     }
 }

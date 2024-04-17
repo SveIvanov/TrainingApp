@@ -1,8 +1,11 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 using TrainingApp.Core.Contracts;
 using TrainingApp.Core.Models.Hiit;
 using TrainingApp.Extensions;
+using TrainingApp.Infrastructure.Data.Models;
 
 namespace TrainingApp.Controllers
 {
@@ -56,5 +59,16 @@ namespace TrainingApp.Controllers
 
             return RedirectToAction(nameof(All));
         }
+
+        
+
+
+
+
+
+
+
+
+
     }
 }

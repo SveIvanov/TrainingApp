@@ -1,9 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TrainingApp.Core.Contracts;
 using TrainingApp.Core.Models.Hiit;
 using TrainingApp.Infrastructure.Data;
@@ -37,6 +32,8 @@ namespace TrainingApp.Core.Services
             return hiit.Id;
         }
 
+        
+
         public async Task<IEnumerable<AllHiitModel>> TakeAllAsync()
         {
             return await context.Hiits
@@ -52,5 +49,8 @@ namespace TrainingApp.Core.Services
                    })
                    .ToListAsync();
         }
+
+
+        
     }
 }

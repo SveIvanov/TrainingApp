@@ -1,0 +1,13 @@
+﻿@model HiitFormModel
+@{
+	ViewData["Title"] = "Add Hiit Training";
+}
+
+<h2 class="text-center">@ViewData["Title"]</h2>
+<hr />
+
+<partial name="_HiitFormPartial" model="@Model" />
+
+@section Scripts{
+	<partial name="_ValidationScriptsPartial" />
+}

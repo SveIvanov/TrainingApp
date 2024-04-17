@@ -11,5 +11,7 @@ namespace TrainingApp.Core.Contracts
     public interface ICardioTrainingService
     {
         Task<IEnumerable<AllCardioTrainingModel>> TakeAllAsync();
+
+        Task<int> CreateAsync(CardioTrainingFormModel model, int trainerId);
     }
 }

@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
+﻿using System.ComponentModel.DataAnnotations;
 using static TrainingApp.Core.Constants.MessageConstants;
+using static TrainingApp.Infrastructure.Constants.DataConstants;
+
 
 namespace TrainingApp.Core.Models.Crossfit
 {
@@ -16,6 +12,8 @@ namespace TrainingApp.Core.Models.Crossfit
         public int Duration { get; set; }
 
         [Required(ErrorMessage = RequiredMassage)]
+        [Display(Name = "Date")]
+        [RegularExpression(DateRegex, ErrorMessage = DateFormatMassage)]
         public string Date { get; set; } = null!;
     }
 }

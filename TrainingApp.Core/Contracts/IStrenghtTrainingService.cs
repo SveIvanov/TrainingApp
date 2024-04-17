@@ -11,5 +11,7 @@ namespace TrainingApp.Core.Contracts
     public interface IStrenghtTrainingService
     {
         Task<IEnumerable<AllStrenghtTrainingModel>> TakeAllAsync();
+
+        Task<int> CreateAsync(StrenghtTrainingFormModel model, int trainerId);
     }
 }

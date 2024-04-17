@@ -10,5 +10,7 @@ namespace TrainingApp.Core.Contracts
     public interface IHiitService
     {
         Task<IEnumerable<AllHiitModel>> TakeAllAsync();
+
+        Task<int> CreateAsync(HiitFormModel model,int trainerId);
     }
 }

@@ -9,6 +9,7 @@ using TrainingApp.Core.Contracts;
 using TrainingApp.Core.Models.Hiit;
 using TrainingApp.Core.Models.StrenghtTraining;
 using TrainingApp.Infrastructure.Data;
+using TrainingApp.Infrastructure.Data.Models;
 
 namespace TrainingApp.Core.Services
 {
@@ -19,6 +20,23 @@ namespace TrainingApp.Core.Services
         public StrenghtTrainingService(TrainingDbContext _context)
         {
             context = _context;
+        }
+
+        public async Task<int> CreateAsync(StrenghtTrainingFormModel model, int trainerId)
+        {
+            StrenghtTraining strenghtTraining = new StrenghtTraining()
+            {
+                BodyPart = model.BodyPart,
+                DurationInMinutes = model.Duration,
+                Sets = model.Sets,
+                Date = DateTime.Parse(model.Date),
+                TrainerId = trainerId
+            };
+
+            await context.StrenghtTrainings.AddAsync(strenghtTraining);
+            await context.SaveChangesAsync();
+
+            return strenghtTraining.Id;
         }
 
         public async Task<IEnumerable<AllStrenghtTrainingModel>> TakeAllAsync()

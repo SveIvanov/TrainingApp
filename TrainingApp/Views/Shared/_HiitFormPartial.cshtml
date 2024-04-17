@@ -1,0 +1,28 @@
+﻿@model HiitFormModel
+<div class="row">
+	<div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
+		<form method="post"> 
+			<div class="form-group"> 
+				<label asp-for="Type"></label> 
+				<input asp-for="Type" class="form-control" placeholder="Type..."> 
+				<span asp-validation-for="Type" class="small text-danger"></span> 
+			</div> 
+			<div class="form-group"> 
+				<label asp-for="Duration"></label> 
+				<input asp-for="Duration" class="form-control" placeholder="Duration...">
+				<span asp-validation-for="Duration" class="small text-danger"></span>
+			</div>
+			<div class="form-group"> 
+				<label asp-for="Intervals"></label> 
+				<textarea asp-for="Intervals" class="form-control" placeholder="Intervals..."></textarea>
+				<span asp-validation-for="Intervals" class="small text-danger"></span>
+			</div>
+			<div class="form-group"> 
+				<label asp-for="Date"></label> 
+				<input asp-for="Date" class="form-control">
+				<span asp-validation-for="Date" class="small text-danger"></span>
+			</div> 
+			<div class="text-center"> <input class="btn btn-primary mt-3" type="submit" value="Save" /> </div>
+		</form>
+	</div>
+</div>

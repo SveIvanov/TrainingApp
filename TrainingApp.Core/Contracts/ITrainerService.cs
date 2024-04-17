@@ -11,5 +11,7 @@ namespace TrainingApp.Core.Contracts
         Task<bool> ExistByIDAsync(string UserId);
 
         Task CreateAsync(string userId, string name);
+
+        Task<int?> GetTrainerIdAsync(string userId);
     }
 }

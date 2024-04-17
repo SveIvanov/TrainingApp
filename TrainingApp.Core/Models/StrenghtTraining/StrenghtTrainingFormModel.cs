@@ -14,9 +14,11 @@ namespace TrainingApp.Core.Models.StrenghtTraining
         [Display(Name = "Duration in minutes")]
         public int Duration { get; set; }
         [Required(ErrorMessage = RequiredMassage)]
-        [Display(Name = "Intervals")]
-        public int Intervals { get; set; }
+        [Display(Name = "Sets")]
+        public int Sets { get; set; }
         [Required(ErrorMessage = RequiredMassage)]
+        [Display(Name = "Date")]
+        [RegularExpression(DateRegex, ErrorMessage = DateFormatMassage)]
         public string Date { get; set; } = null!;
     }
 }

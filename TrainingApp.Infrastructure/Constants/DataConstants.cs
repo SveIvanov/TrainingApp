@@ -23,6 +23,9 @@ namespace TrainingApp.Infrastructure.Constants
 
         public const int TrainerNameMinLenght = 5;
 
+        public const string DateRegex = @"\d\d\/\d\d\/\d\d\d\d \d\d:\d\d";
+
+
 
 
     }

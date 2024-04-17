@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using TrainingApp.Core.Contracts;
 using TrainingApp.Core.Models.Hiit;
 using TrainingApp.Infrastructure.Data;
+using TrainingApp.Infrastructure.Data.Models;
 
 namespace TrainingApp.Core.Services
 {
@@ -18,7 +19,24 @@ namespace TrainingApp.Core.Services
         {
             context = _context;
         }
-        
+
+        public async Task<int> CreateAsync(HiitFormModel model,int trainerId)
+        {
+            Hiit hiit = new Hiit()
+            {
+                Type = model.Type,
+                DurationInMinutes = model.Duration,
+                Intervals = model.Intervals,
+                Date = DateTime.Parse(model.Date),
+                TrainerId = trainerId
+            };
+
+            await context.Hiits.AddAsync(hiit);
+            await context.SaveChangesAsync();
+
+            return hiit.Id;
+        }
+
         public async Task<IEnumerable<AllHiitModel>> TakeAllAsync()
         {
             return await context.Hiits

@@ -35,5 +35,11 @@ namespace TrainingApp.Core.Services
             return await context.Trainers
                         .AnyAsync(t => t.UserId == userId);
         }
+
+        public async Task<int?> GetTrainerIdAsync(string userId)
+        {
+            return (await context.Trainers
+                .FirstOrDefaultAsync(t => t.UserId == userId))?.Id;
+        }
     }
 }

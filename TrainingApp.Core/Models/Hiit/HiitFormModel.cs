@@ -22,6 +22,8 @@ namespace TrainingApp.Core.Models.Hiit
         [Display(Name = "Intervals")]
         public int Intervals { get; set; }
         [Required(ErrorMessage = RequiredMassage)]
+        [Display(Name = "Date")]
+        [RegularExpression(DateRegex,ErrorMessage = DateFormatMassage)]
         public string Date { get; set; } = null!;
 
 
